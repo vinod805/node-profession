@@ -9,9 +9,13 @@ if(err){
     console.log(err)
 }
 const db=client.db(database)
-db.collection('users').insertOne({
-    name:'vinod',email:'vino@gmai.com'
-})
+// db.collection('users').insertOne({
+//     name:'vinod',email:'vino@gmai.com'
+// })
+db.collection('users').insertMany( [{name:'manoj',email:'manoj@gmail.com'},{name:'test',email:'test@gmail.com'}],(err,res)=>{
+    console.log(res.ops)
+}
+)
 })
 const express=require('express')
 const app=express()
